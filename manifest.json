@@ -15,12 +15,9 @@
     "default_title": "A calculator used to give a sales quote!(needs to be changed)"
     },
 
-    "background": {
-        "scripts": ["js/background.js"]
-    },
-
     "permissions": [
         "activeTab",
-        "storage"
+        "storage",
+        "tabs"
       ]
 }
