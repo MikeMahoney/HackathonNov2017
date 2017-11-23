@@ -56,7 +56,7 @@ var calculator = new Vue({
     },
     methods: {
         clickTest: function (event) {
-            chrome.tabs.create({ url: 'export/testHtml.html' });
+            chrome.tabs.create({ url: 'exportHTML/export.html' });
         }
     }
 
