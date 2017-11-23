@@ -9,7 +9,6 @@
         <div id="calculator" style="width:500px;">
             <div class="container">
                 <form action="">
-                    <a v-on:click="clickTest" >Click</a>
                     <h1 style="font-size: 2.4rem; margin: auto;margin-left:9px;" >Per User Pricing Calculator</h1>
                     <input name="enterprise" v-model="enterpriseSelected" type="checkbox" class="filled-in" id="filled-in-box1" />
                     <label for="filled-in-box1">Enterprise</label>
@@ -122,7 +121,8 @@
                     </div>
                 </form>
                 <hr />
-                <div class="payment">{{ calcPayment }} / year</div>
+
+                <div class="payment">{{ calcPayment }} / month</div><div v-on:click="clickTest"  style="cursor: pointer;color:#85bb65">Export</div>
             </div>
         </div>
         <script src="js/background.js"></script>
