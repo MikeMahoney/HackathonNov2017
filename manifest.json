@@ -1,18 +1,18 @@
 {
     // Required
     "manifest_version": 2,
-    "name": "sales calculator",
+    "name": "Teamwork makes it rain",
     "version": "3",
 
     // Recommended
-    "description": "A calculator used for giving a sales quote",
+    "description": "A calculator app used to make it rain money",
     "icons": {"16":"icons/Calculator16x16.png",
               "48":"icons/Calculator48x48.png",
               "128":"icons/Calculator128x128.png" },
     "browser_action": {
     "default_icon": "icons/Calculator16x16.png",
     "default_popup": "popup.html",
-    "default_title": "A calculator used to give a sales quote!(needs to be changed)"
+    "default_title": "$$ Make it rain Bitches! $$"
     },
 
     "permissions": [
