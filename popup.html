@@ -15,10 +15,10 @@
                         <h3>Products:</h3>
                         <div style="position: absolute;left: 67px;top: 2px;">
 
-                            <input name="projects" v-model="projectsSelected"type="checkbox" class="filled-in" id="filled-in-box1" checked="checked" />
+                            <input name="projects" v-model="projectsSelected"type="checkbox" class="filled-in" id="filled-in-box1" />
                             <label for="filled-in-box1">Projects</label>
 
-                            <input name="desk" v-model="deskSelected" type="checkbox" class="filled-in" id="filled-in-box2" checked="checked" />
+                            <input name="desk" v-model="deskSelected" type="checkbox" class="filled-in" id="filled-in-box2" />
                             <label for="filled-in-box2">Desk</label>
 
                         </div>
@@ -29,12 +29,14 @@
                         <h2>Projects</h2>
                         <label for="durationProjects">Duration</label>
                         <select name="durationProjects" v-model.number="durationProjects">
-                            <option value="11.25" selected>Monthly</option>
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="11.25">Monthly</option>
                             <option value="9">Annual</option>
                         </select>
                         <br/>
                         <label for="pricePlanProjects">Price Plan</label>
                         <select name="pricePlanProjects" v-model="pricePlanProjects">
+                            <option value="" disabled selected>Choose your option</option>
                             <option value="pro">Pro</option>
                         </select>
                         <br/>
@@ -44,19 +46,25 @@
                     <!--  Desk -->
                     <div v-if="deskSelected === true">
                         <h2>Desk</h2>
-                            <label>Duration</label>
-                            <select v-model="durtionDesk" v-model="durationDesk">
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="monthly">Monthly</option>
-                                <option value="annual">Annualy</option>
-                            </select>
-                            <br/>
-                            <label>Price Plan</label>
-                            <select v-model="pricePlanDesk" v-model="pricePlanDesk">
-                                <option value="" disabled selected>Choose your option</option>
-                                <option value="basic">Basic</option>
-                                <option value="pro">Pro</option>
-                            </select>
+                        <label>Duration</label>
+                        <select v-model="durtionDesk" v-model="durationDesk">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="annual">Annualy</option>
+                        </select>
+                        <br/>
+                        <label>Price Plan</label>
+                        <select v-model="pricePlanDesk" v-model="pricePlanDesk">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option value="basic">Basic</option>
+                            <option value="pro">Pro</option>
+                        </select>
+                        <br/>
+                        <label for="agents">Number of agents (max=100)</label>
+                        <input type="number" min="0" max="100" name="agents" v-model.number="agents"/>
+                        <br/>
+                        <label for="helpdocSites">Helpdoc Sites (First is free!)</label>
+                        <input type="number" min="0" name="helpdocSites" v-model.number="helpdocSites"/>
                     </div>
                     <hr/>
                     <h2>Discount</h2>
