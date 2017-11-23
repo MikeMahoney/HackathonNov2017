@@ -18,7 +18,7 @@ var calculator = new Vue({
             if(this.eduDiscount == true){
                 payment = payment - (payment * 0.15);
             } else {
-                payment = payment - (this.customDiscount/100);
+                payment = payment - (payment * (this.customDiscount/100));
             }
             return this.currencySymbol + payment;
         }
