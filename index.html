@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Hackathon Nov 2017</title>
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="calculator">
+            <div class="container">
+                <form action="">
+                    <h1>Per User Pricing Calculator</h1>
+                    <label for="product">Product</label>
+                    <select name="product" class="form-control" v-model="selected" required>
+                        <option value="" selected></option>
+                        <option value="projects">Projects</option>
+                        <option value="desk">Desk</option>
+                        <option value="crm">CRM</option>
+                    </select>
+                    <div v-if="selected === 'projects'">
+                        <h2>Projects</h2>
+                        <label for="price">Purchase price</label>
+                        <input type="number" name="price" class="currency" v-model.number="price"/>
+                        <br />
+                        <label for="down-payment">Down payment</label>
+                        <input type="number" name="down-payment" class="currency" v-model.number="downPayment"/>
+                        <br />
+
+                        <label for="trade-in">Trade-in value</label>
+                        <input type="number" name="trade-in" class="currency" v-model.number="tradeIn"/>
+                        <br />
+
+                        <label for="length">Term length</label>
+                        <select name="length" v-model="length">
+                            <option value="12">12 months</option>
+                            <option value="24">24 months</option>
+                            <option value="36">36 months</option>
+                            <option value="48">48 months</option>
+                            <option value="60" selected>60 months</option>
+                            <option value="72">72 months</option>
+                            <option value="84">84 months</option>
+                        </select>
+
+                        <label for="rate">Rate</label>
+                        <input type="number" name="rate" v-model.number="rate"/>
+                    </div>
+                    <div v-else-if="selected === 'desk'">
+                        <h2>Desk</h2>
+                        <label for="price">Purchase price</label>
+                        <input type="number" name="price" class="currency" v-model.number="price"/>
+                        <br />
+
+                        <label for="trade-in">Trade-in value</label>
+                        <input type="number" name="trade-in" class="currency" v-model.number="tradeIn"/>
+                        <br />
+
+                        <label for="length">Term length</label>
+                        <select name="length" v-model="length">
+                            <option value="12">12 months</option>
+                            <option value="24">24 months</option>
+                            <option value="36">36 months</option>
+                            <option value="48">48 months</option>
+                            <option value="60" selected>60 months</option>
+                            <option value="72">72 months</option>
+                            <option value="84">84 months</option>
+                        </select>
+
+                        <label for="rate">Rate</label>
+                        <input type="number" name="rate" v-model.number="rate"/>
+                    </div>
+                    <div v-else-if="selected === 'crm'">
+                        <h2>CRM</h2>
+                        <label for="price">Purchase price</label>
+                        <input type="number" name="price" class="currency" v-model.number="price"/>
+                        <br />
+                        <label for="down-payment">Down payment</label>
+                        <input type="number" name="down-payment" class="currency" v-model.number="downPayment"/>
+                        <br />
+
+                        <label for="length">Term length</label>
+                        <select name="length" v-model="length">
+                            <option value="12">12 months</option>
+                            <option value="24">24 months</option>
+                            <option value="36">36 months</option>
+                            <option value="48">48 months</option>
+                            <option value="60" selected>60 months</option>
+                            <option value="72">72 months</option>
+                            <option value="84">84 months</option>
+                        </select>
+
+                        <label for="rate">Rate</label>
+                        <input type="number" name="rate" v-model.number="rate"/>
+                    </div>
+                    <div v-else>
+                        <h2>Select a product.</h2>
+                    </div>
+                </form>
+                <div class="payment">{{ calcPayment }} / month</div>
+            </div>
+        </div>
+        <script src="js/app.js"></script>
+    </body>
+</html>
