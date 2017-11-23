@@ -73,6 +73,11 @@ var calculator = new Vue({
 
             return this.currencySymbol + payment;
         }
+    },
+    methods: {
+        clickTest: function (event) {
+            chrome.tabs.create({ url: 'exportHTML/export.html' });
+        }
     }
 
 });
